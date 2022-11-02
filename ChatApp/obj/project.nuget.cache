@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "82jO0uW+xkpeD0d//kuhnBfsK0VYuMUYH77ECODpR/GbmUfJoZV9r0A5P5gDfMAqfs0X3KBtGjKF9/obBBif2A==",
+  "dgSpecHash": "iEOkSAZ744Rb9YZfGecvmvr8G+ySi+FyeJvaUJMZ15ovDHOx25fv2Y7l7WSO8yc4ug+Uk7XMJicELRoQbeLT6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\ChatApp\\ChatApp\\ChatApp.csproj",
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\ChatApp\\ChatApp\\ChatClient.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
