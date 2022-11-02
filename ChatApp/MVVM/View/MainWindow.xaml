@@ -7,6 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <DockPanel>
+            <TextBox 
+                Height="25"
+                DockPanel.Dock="Top"></TextBox>
+            <Button 
+                Height="25" 
+                DockPanel.Dock="Top" 
+                Content="Connect"></Button>
+            <ListView></ListView>
+        </DockPanel>
+
+        <StackPanel Grid.Column="1">
+            <ListView Height="380"></ListView>
+            <StackPanel Orientation="Horizontal">
+                <TextBox 
+                    Height="55" 
+                    Width="545" 
+                    VerticalContentAlignment="Center"
+                    ></TextBox>
+                <Button 
+                    Width="55" 
+                    Content="Send"></Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
