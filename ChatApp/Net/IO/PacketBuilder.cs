@@ -15,7 +15,7 @@ namespace ChatClient.Net.IO
         {
             _ms = new MemoryStream();
         }
-        public void WriteCode(byte opcode)
+        public void WriteOpCode(byte opcode)
         {
             _ms.WriteByte(opcode);
         }
