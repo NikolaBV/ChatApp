@@ -27,7 +27,13 @@
                 DockPanel.Dock="Top" 
                 Content="Connect"
                 Command="{Binding ConnectToServerCommand}"></Button>
-            <ListView></ListView>
+            <ListView ItemsSource="{Binding Users}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Username}"></TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </DockPanel>
 
         <StackPanel Grid.Column="1">

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ChatClient.MVVM.ViewModel
 {
@@ -35,7 +36,14 @@ namespace ChatClient.MVVM.ViewModel
                 UID = _server.packetReader.ReadMessage(),
 
             };
-            
+            if(!Users.Any(x => x.UID == user.UID)) //if the Users collection doesnt already contain any user that already has that id then we can add that to the collection
+            {
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    Users.Add(user);
+                });
+            }
         }
+
     }
 }
