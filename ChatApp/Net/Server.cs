@@ -14,7 +14,7 @@ namespace ChatClient.Net
         {
             _client = new TcpClient();
         }
-        public void ConnectToServer() //Connecting client to server, public because its going to be exposed to the ViewModel
+        public void ConnectToServer(string username) //Connecting client to server, public because its going to be exposed to the ViewModel
         {
             if (!_client.Connected)
             {

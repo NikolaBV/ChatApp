@@ -20,7 +20,8 @@
         <DockPanel>
             <TextBox 
                 Height="25"
-                DockPanel.Dock="Top"></TextBox>
+                DockPanel.Dock="Top"
+                Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <Button 
                 Height="25" 
                 DockPanel.Dock="Top" 
