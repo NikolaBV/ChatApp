@@ -25,5 +25,20 @@ namespace ChatServer
 
             Console.WriteLine($"({DateTime.Now}): Client has connected with the username: {Username}");
         }
+
+        void Process()
+        {
+            while (true)
+            {
+                try
+                {
+
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
     }
 }

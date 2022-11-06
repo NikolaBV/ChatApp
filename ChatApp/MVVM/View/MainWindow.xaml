@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp" xmlns:viewmodel="clr-namespace:ChatClient.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="474" Width="816">
 
     <Window.DataContext>
         <viewmodel:MainViewModel></viewmodel:MainViewModel>
@@ -43,10 +43,12 @@
                     Height="55" 
                     Width="545" 
                     VerticalContentAlignment="Center"
+                    Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}"
                     ></TextBox>
                 <Button 
                     Width="55" 
-                    Content="Send"></Button>
+                    Content="Send"
+                   Command="{Binding SendMessageComand}"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>
