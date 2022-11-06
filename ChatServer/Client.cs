@@ -24,6 +24,7 @@ namespace ChatServer
             Username = packetReader.ReadMessage();
 
             Console.WriteLine($"({DateTime.Now}): Client has connected with the username: {Username}");
+            Task.Run(() => Process());
         }
 
         void Process()
@@ -39,17 +40,19 @@ namespace ChatServer
                             var message = packetReader.ReadMessage();
                             Console.WriteLine($"({DateTime.Now}), Message Recieved! {message}");
                             Program program = new Program();
-                            program.BroadcastMessage(message);
+                            program.BroadcastMessage($"({DateTime.Now}): {Username}: {message}");
                             break;
                         default:
                             break;
-                    }
+                    } 
                 }
                 catch
                 {
                     Console.WriteLine($"{UID}: Disconnected");
+                    Program program = new Program();
+                    program.BroadcastDisconnect(UID.ToString());
                     ClientSocket.Close();
-                    throw;
+                    ClientSocket.Close();
                 }
             }
         }
