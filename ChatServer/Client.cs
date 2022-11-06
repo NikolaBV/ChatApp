@@ -32,10 +32,23 @@ namespace ChatServer
             {
                 try
                 {
-
+                    var opcode = packetReader.ReadByte();
+                    switch (opcode)
+                    {
+                        case 5:
+                            var message = packetReader.ReadMessage();
+                            Console.WriteLine($"({DateTime.Now}), Message Recieved! {message}");
+                            Program program = new Program();
+                            program.BroadcastMessage(message);
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 catch
                 {
+                    Console.WriteLine($"{UID}: Disconnected");
+                    ClientSocket.Close();
                     throw;
                 }
             }

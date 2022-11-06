@@ -15,6 +15,9 @@ namespace ChatClient.Net
         PacketBuilder _packetBuilder;
 
         public event Action connectedEvent;
+        public event Action messageRecievedEvent;
+        public event Action userDisconnectEvent;
+
 
 
         public Server() //Instantiete new instance to TCP Client
@@ -51,6 +54,12 @@ namespace ChatClient.Net
                     {
                         case 1:
                             connectedEvent?.Invoke();
+                            break;
+                        case 5:
+                            messageRecievedEvent?.Invoke();
+                            break;
+                        case 10:
+                            userDisconnectEvent?.Invoke();
                             break;
                         default:
                             Console.WriteLine("Ayooo");
